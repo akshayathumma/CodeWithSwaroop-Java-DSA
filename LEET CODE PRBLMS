@@ -1,0 +1,67 @@
+//Build Array from Permutation
+class Solution {
+    public int[] buildArray(int[] nums) {
+        int[] ans = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            ans[i] = nums[nums[i]];
+        }
+        return ans;
+    }
+}
+
+//Concatenation of Array
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int n=nums.length;
+        int[] ans=new int[2*n];
+        for(int i=0;i<n;i++){
+            ans[i]=nums[i];
+            ans[i+n]=nums[i];
+        }
+        return ans;
+    }
+}
+
+//Running Sum of 1d Array
+class Solution {
+    public int[] runningSum(int[] nums) {
+        int n=nums.length;
+        int[] runningSum=new int[n];
+        runningSum[0]=nums[0];
+        for(int i=1;i<n;i++){
+            runningSum[i]=runningSum[i-1]+nums[i];
+        }
+        return runningSum;
+    }
+}
+
+//Richest Customer Wealth
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+        int n=accounts.length;
+        int sum=0;
+        for(int i=0;i<n;i++){
+            int cussum=0;
+            for(int j=0;j<accounts[i].length;j++){
+               cussum+=accounts[i][j];
+            }
+            if(cussum>sum){
+            sum=cussum;
+           }
+        }
+        return sum;
+    }
+}
+
+//Shuffle the Array
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int[] arr=new int[2*n];
+        for(int i=0;i<n;i++){
+            arr[2*i]=nums[i];
+            arr[2*i+1]=nums[i+n];
+        }
+        return arr;
+    }
+}
+   
